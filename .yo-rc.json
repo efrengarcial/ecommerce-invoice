@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.jhipster.demo.invoice",
+    "packageFolder": "com/jhipster/demo/invoice",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "invoice",
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "buildTool": "gradle",
+    "serverPort": "8081",
+    "skipUserManagement": true,
+    "jhipsterVersion": "5.7.2",
+    "clientPackageManager": "npm",
+    "cacheProvider": "hazelcast",
+    "jwtSecretKey": "MWRiNjFmY2Y5YmI0MmU3ODhmOGExODY3OWRhYzAzY2NlOTVkZTI4Mjc4MGFjNjllYjIwY2M0MjJlOTYwZTAyMWM2NTEyNTZhNzJlNGUyMzY4YmQ2OGViMmRhNDAxNTBlYTY4N2Y4ZDQ5NmU3MmRmY2JiMzdmMGVkOWNmYjZkYmI=",
+    "otherModules": []
+  },
+  "entities": [
+    "Invoice",
+    "Shipment"
+  ]
+}
