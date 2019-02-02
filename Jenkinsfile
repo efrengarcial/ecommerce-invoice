@@ -23,7 +23,7 @@ pipeline {
           }
      }
       stage("build & SonarQube analysis") {
-           node {
+           steps {
                withSonarQubeEnv('My SonarQube Server') {
                   sh "./gradlew -Pprod clean test sonarqube'"
                }
