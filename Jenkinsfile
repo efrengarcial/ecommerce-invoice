@@ -23,12 +23,14 @@ pipeline {
           }
      }
       stage("build & SonarQube analysis") {
-           steps {
-               withSonarQubeEnv('SonarQubeServer') {
-                  sh "./gradlew -Pprod clean test sonarqube'"
-               }
-           }
+         agent any
+         steps {
+           withSonarQubeEnv('SonarQubeServer') {
+            sh "./gradlew -Pprod clean test sonarqube'"
+         }
+       }
       }
+
        stage("Quality Gate") {
           steps {
             timeout(time: 1, unit: 'HOURS') {
