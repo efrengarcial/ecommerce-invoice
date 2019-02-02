@@ -22,5 +22,19 @@ pipeline {
                sh "./gradlew jacocoTestCoverageVerification"
           }
      }
+      stage("build & SonarQube analysis") {
+           node {
+               withSonarQubeEnv('My SonarQube Server') {
+                  sh "./gradlew -Pprod clean test sonarqube'"
+               }
+           }
+      }
+       stage("Quality Gate") {
+          steps {
+            timeout(time: 1, unit: 'HOURS') {
+              waitForQualityGate abortPipeline: true
+            }
+          }
+        }
  }
 }
