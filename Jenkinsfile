@@ -23,9 +23,11 @@ pipeline {
           }
      }
       stage("build & SonarQube analysis") {
-          withSonarQubeEnv('SonarQubeServer') {
-                sh "./gradlew -Pprod clean  sonarqube'"
-             }
+           steps {
+               withSonarQubeEnv('SonarQubeServer') {
+                  sh "./gradlew -Pprod clean test sonarqube'"
+               }
+           }
       }
        stage("Quality Gate") {
           steps {
