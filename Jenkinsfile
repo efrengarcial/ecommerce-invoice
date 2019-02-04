@@ -36,5 +36,18 @@ pipeline {
             }
           }
         }
+      stage('Deploy for Staging') {
+            agent any
+            when {
+                branch 'master'
+            }
+            stages {
+                stage("Package") {
+                    steps {
+                        sh "./gradlew build"
+                    }
+                }
+            }
+       }
  }
 }
