@@ -66,7 +66,7 @@ public class Invoice implements Serializable {
     @OneToMany(mappedBy = "invoice")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Shipment> shipments = new HashSet<>();
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove **test efren**
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
