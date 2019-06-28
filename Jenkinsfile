@@ -24,6 +24,7 @@ volumes: [
             pwd
             echo "GIT_BRANCH=${gitBranch}"
             echo "GIT_COMMIT=${gitCommit}"
+            export GRADLE_USER_HOME="/tmp"
             gradle test
             """
         }
